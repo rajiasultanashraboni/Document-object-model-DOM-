@@ -7,24 +7,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Document object model</h1>
+    <h1 id="title">Document object model</h1>
     <ul>
-      <li>Dom de baba</li>
-      <li>bonobash</li>
-      <li>jalali set</li>
-      <li>shafayet</li>
+      <li class="places">Dom de baba</li>
+      <li class="places">bonobash</li>
+      <li class="places">jalali set</li>
+      <li id="other">shafayet</li>
     </ul>
 
     <script>
       const liCollection = document.getElementsByTagName("li");
       for (const li of liCollection) {
-        console.log(li.innerText);
+        // console.log(li.innerText);
       }
 
       const headings = document.getElementsByTagName("h1");
       for (const head of headings) {
-        console.log(head.innerText);
+        // console.log(head.innerText);
       }
+
+      const places = document.getElementsByClassName("places");
+      for (const place of places) {
+        // console.log(place.innerText);
+      }
+
+      const others = document.getElementById("other");
+      others.innerText = "changed";
+      console.log(others);
+      //   change style using js
+      document.getElementById("title").style.color = "red";
+      document.getElementById("title").style.backgroundColor = "Yellow";
+      document.getElementById("title").style.textAlign = "center";
     </script>
   </body>
 </html>
