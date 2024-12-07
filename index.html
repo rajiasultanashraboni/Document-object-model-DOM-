@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Document object model</h1>
+    <ul>
+      <li>Dom de baba</li>
+      <li>bonobash</li>
+      <li>jalali set</li>
+      <li>shafayet</li>
+    </ul>
+
+    <script>
+      const liCollection = document.getElementsByTagName("li");
+      for (const li of liCollection) {
+        console.log(li.innerText);
+      }
+
+      const headings = document.getElementsByTagName("h1");
+      for (const head of headings) {
+        console.log(head.innerText);
+      }
+    </script>
+  </body>
+</html>
