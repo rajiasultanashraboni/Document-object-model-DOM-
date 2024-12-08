@@ -25,4 +25,16 @@ section.appendChild(ul);
 
 mainContainer.appendChild(section);
 
-// another option
+// another option00000000000
+const sectionDress = document.createElement("section");
+sectionDress.innerHTML = `
+    <h1>this is the section 0f dresses</h1>
+    <ul>
+        <li>tshirt </li>
+        <li>tops</li>
+        <li>pant</li>
+        <li>kurti</li>
+    </ul>
+`;
+
+mainContainer.appendChild(sectionDress);
