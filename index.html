@@ -8,12 +8,32 @@
   </head>
   <body>
     <h1 id="title">Document object model</h1>
-    <ul>
-      <li class="places">Dom de baba</li>
-      <li class="places">bonobash</li>
-      <li class="places">jalali set</li>
-      <li id="other">shafayet</li>
-    </ul>
+    <main id="main-container">
+      <section>
+        <ul id="places">
+          <li class="places">Dom de baba</li>
+          <li class="places">bonobash</li>
+          <li class="places">jalali set</li>
+          <li id="other">shafayet</li>
+        </ul>
+      </section>
+
+      <section>
+        <li>tourist place</li>
+        <li>tourist place</li>
+        <li>tourist place</li>
+        <li>tourist place</li>
+      </section>
+
+      <section id="specific">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti
+          delectus dolores hic ratione, corporis quasi obcaecati dignissimos
+          eius modi est at explicabo nesciunt eligendi laborum ducimus molestiae
+          pariatur fugiat?
+        </p>
+      </section>
+    </main>
 
     <script>
       const liCollection = document.getElementsByTagName("li");
@@ -39,5 +59,7 @@
       document.getElementById("title").style.backgroundColor = "Yellow";
       document.getElementById("title").style.textAlign = "center";
     </script>
+    <script src="append.js"></script>
+    <script src="styles.js"></script>
   </body>
 </html>
