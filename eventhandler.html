@@ -7,5 +7,38 @@
   </head>
   <body>
     <h1>final dom event handlers</h1>
+    <h3 id="handle-status">Default text</h3>
+    <p id="display">Another default text</p>
+    <input id="input-field" type="text" />
+    <button id="btn-update">Update</button><br /><br />
+    <button onclick="handleOnclick()">Add onclick function</button>
+    <button id="addEventListener">handle event by addEventListener</button>
+
+    <script>
+      function handleOnclick() {
+        const handleStatus = document.getElementById("handle-status");
+        handleStatus.innerText =
+          "default text is changed here by handleonclick";
+      }
+
+      document
+        .getElementById("addEventListener")
+        .addEventListener("click", function () {
+          const handleStatus = document.getElementById("handle-status");
+          handleStatus.innerText =
+            "default text is changed by addeventlistener";
+        });
+
+      document
+        .getElementById("btn-update")
+        .addEventListener("click", function () {
+          const inputField = document.getElementById("input-field");
+          const inputText = inputField.value;
+
+          const p = document.getElementById("display");
+          p.innerText = inputText;
+          inputField.value = "";
+        });
+    </script>
   </body>
 </html>
