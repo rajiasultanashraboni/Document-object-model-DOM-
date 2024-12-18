@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+      }
+      p {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+      span {
+        color: #4caf50;
+      }
+      input {
+        padding: 10px;
+        /* margin: 10px; */
+        width: 200px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="center">
+      <div>
+        <p>Expenses: <span id="expense-span">0</span></p>
+      </div>
+
+      <div>
+        <input id="expense-field" type="text" placeholder="Expense" />
+        <input id="amount-field" type="number" placeholder="Amount" />
+        <button id="insert-button">Insert</button>
+      </div>
+    </div>
+    <section id="row-container"></section>
+    <script>
+      const expenseField = document.getElementById("expense-field");
+      const amountField = document.getElementById("amount-field");
+      const button = document.getElementById("insert-button");
+      const expenseSpan = document.getElementById("expense-span");
+      const rowContainer = document.getElementById("row-container");
+      button.addEventListener("click", function () {
+        const expense = expenseField.value;
+        const amount = Number(amountField.value);
+        console.log(expense, amount);
+        // rowContainer.innerHTML = `
+        //     <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        //         <p>${expense}</p>
+        //         <p>${amount}</p>
+        //     </div>
+        // `;
+
+        const row = `
+            <div style="display: flex; justify-content: space-between; width:20%;margin:0 auto; align-items: center;">
+                <p>${expense}</p>
+                <p>${amount}</p>
+            </div>
+        `;
+        rowContainer.innerHTML += row;
+        expenseField.value = "";
+        amountField.value = "";
+
+        let expenseAmount = Number(expenseSpan.innerText);
+        expenseAmount += amount;
+        expenseSpan.innerText = expenseAmount;
+      });
+    </script>
+  </body>
+</html>

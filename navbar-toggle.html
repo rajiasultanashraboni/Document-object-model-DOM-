@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #navbar {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        padding-top: 200px;
+        cursor: pointer;
+      }
+      .items {
+        list-style: none;
+      }
+
+      .items.active {
+        background-color: red;
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navbar">
+      <li class="items">Home</li>
+      <li class="items">Service</li>
+      <li class="items">About</li>
+      <li class="items">Contact</li>
+      <li class="items">Details</li>
+    </ul>
+
+    <script>
+      document
+        .getElementById("navbar")
+        .addEventListener("click", function (event) {
+          const listItems = document.querySelectorAll(".items");
+          for (const item of listItems) {
+            item.classList.remove("active");
+            if (event.target.classList.contains("items")) {
+              event.target.classList.add("active");
+            }
+          }
+          console.log(event.target.innerText);
+        });
+    </script>
+  </body>
+</html>
